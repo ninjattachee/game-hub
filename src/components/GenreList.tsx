@@ -4,9 +4,10 @@ import getImageUrl from "../services/image-url"
 
 interface GenreListProps {
     onSelectGenre: (genre: Genre) => void
+    selectedGenre: Genre | null
 }
 
-const GenreList = ({ onSelectGenre }: GenreListProps) => {
+const GenreList = ({ onSelectGenre, selectedGenre }: GenreListProps) => {
     const { datas, isLoading, error } = useGenres()
 
     if (error) return null
@@ -18,7 +19,7 @@ const GenreList = ({ onSelectGenre }: GenreListProps) => {
                 <ListItem key={genre.id} paddingY={'5px'}>
                     <HStack>
                         <Image src={getImageUrl(genre.image_background)} boxSize='32px' borderRadius={8} objectFit='cover' />
-                        <Button onClick={() => onSelectGenre(genre)} fontSize='lg' variant='link'>{genre.name}</Button>
+                        <Button fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'} onClick={() => onSelectGenre(genre)} fontSize='lg' variant='link' whiteSpace='normal' textAlign='left'>{genre.name}</Button>
                     </HStack>
                 </ListItem>)}
         </List>
