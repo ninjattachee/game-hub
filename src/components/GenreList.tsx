@@ -8,7 +8,7 @@ interface GenreListProps {
 }
 
 const GenreList = ({ onSelectGenre, selectedGenre }: GenreListProps) => {
-    const { datas, isLoading, error } = useGenres()
+    const { data, isLoading, error } = useGenres()
 
     if (error) return null
     if (isLoading) return <Spinner />
@@ -17,7 +17,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: GenreListProps) => {
         <>
             <Heading fontSize='2xl' marginBottom={3}>Genres</Heading>
             <List>
-            {datas.map(genre =>
+            {data.map(genre =>
                 <ListItem key={genre.id} paddingY={'5px'}>
                     <HStack>
                         <Image src={getImageUrl(genre.image_background)} boxSize='32px' borderRadius={8} objectFit='cover' />

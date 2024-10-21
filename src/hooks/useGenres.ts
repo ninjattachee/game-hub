@@ -1,4 +1,4 @@
-import useDate from "./useDate"
+import genres from "../data/genres"
 
 export interface Genre {
     id: number
@@ -6,8 +6,6 @@ export interface Genre {
     image_background: string
 }
 
-const useGenres = () => {
-    return useDate<Genre>('/genres')
-}
+const useGenres = () => ({ data: genres, isLoading: false, error: null })
 
 export default useGenres
