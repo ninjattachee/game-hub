@@ -5,7 +5,7 @@ import GameCardSkeleton from "./GameCardSkeleton"
 import GameCardContainer from "./GameCardContainer"
 import { GameQuery } from "../App"
 
-const SkeletonCount = 6
+const SkeletonCount = 8
 
 interface GameGridProps {
     gameQuery: GameQuery
