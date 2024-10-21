@@ -8,7 +8,7 @@ interface FetchDatesResponse<T> {
     results: T[]
 }
 
-const useDates = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?: any[]) => {
+const useDate = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?: any[]) => {
     const [datas, setDates] = useState<T[]>([])
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(false)
@@ -32,4 +32,4 @@ const useDates = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?
     return { datas, error, isLoading }
 }
 
-export default useDates
+export default useDate

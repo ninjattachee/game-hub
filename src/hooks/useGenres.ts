@@ -1,4 +1,4 @@
-import useDates from "./useDate"
+import useDate from "./useDate"
 
 export interface Genre {
     id: number
@@ -7,7 +7,7 @@ export interface Genre {
 }
 
 const useGenres = () => {
-    return useDates<Genre>('/genres')
+    return useDate<Genre>('/genres')
 }
 
 export default useGenres

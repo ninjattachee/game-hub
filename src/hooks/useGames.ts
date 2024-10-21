@@ -1,4 +1,4 @@
-import useDates from "./useDate"
+import useDate from "./useDate"
 import { Genre } from "./useGenres"
 
 export interface Platform {
@@ -16,7 +16,7 @@ export interface Game {
 }
 
 const useGames = (selectedGenre: Genre | null) => {
-    return useDates<Game>('/games', { params: { genres: selectedGenre?.id } }, [selectedGenre?.id])
+    return useDate<Game>('/games', { params: { genres: selectedGenre?.id } }, [selectedGenre?.id])
 }
 
 export default useGames
