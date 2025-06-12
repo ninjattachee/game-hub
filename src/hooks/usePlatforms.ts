@@ -14,9 +14,8 @@ const usePlatforms = () =>
     queryFn: () =>
       apiClient
         .get<FetchDatasResponse<Platform>>("platforms/lists/parents")
-        .then((res) => res.data.results),
+        .then((res) => res.data),
     staleTime: 24 * 60 * 60 * 1000, // 24 hours
-    initialData: [],
   });
 
 export default usePlatforms;
