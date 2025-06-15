@@ -7,15 +7,13 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
-import useGenres, { Genre } from "../hooks/useGenres";
+import useGenres from "../hooks/useGenres";
 import getImageUrl from "../services/image-url";
+import useGameQueryStore from "../store";
 
-interface GenreListProps {
-  onSelectGenre: (genre: Genre) => void;
-  selectedGenreId?: number;
-}
-
-const GenreList = ({ onSelectGenre, selectedGenreId }: GenreListProps) => {
+const GenreList = () => {
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setGenreId = useGameQueryStore((s) => s.setGenreId);
   const { data, isLoading, error } = useGenres();
 
   if (error) return null;
@@ -38,7 +36,7 @@ const GenreList = ({ onSelectGenre, selectedGenreId }: GenreListProps) => {
               />
               <Button
                 fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
-                onClick={() => onSelectGenre(genre)}
+                onClick={() => setGenreId(genre.id)}
                 fontSize="lg"
                 variant="link"
                 whiteSpace="normal"
