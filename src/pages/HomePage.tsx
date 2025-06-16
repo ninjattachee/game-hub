@@ -23,9 +23,9 @@ const HomePage = () => {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <Box paddingLeft={2}>
+        <Box paddingX={2} marginBottom={5}>
           <GameHeading />
-          <HStack spacing={5} paddingBottom={5}>
+          <HStack spacing={5}>
             <PlatformSelector />
             <SortSelector />
           </HStack>
