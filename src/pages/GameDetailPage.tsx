@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Heading, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import GameDetailSkeleton from "../components/GameDetailSkeleton";
 import useGame from "../hooks/useGame";
